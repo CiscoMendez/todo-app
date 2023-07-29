@@ -1,8 +1,9 @@
 import PropTypes from 'prop-types';
 import clsx from 'clsx';
+import './delete-button.css';
 
 const DeleteButton = ({ children, disabled }) => {
-  const buttonClasses = clsx('btn', {
+  const buttonClasses = clsx('btn-delete', {
     'opacity-40': disabled
   });
 

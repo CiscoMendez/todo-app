@@ -28,7 +28,8 @@ export function TodosProvider({ children }) {
         todos,
         addTodo,
         deleteTodos
-      }}>
+      }}
+    >
       {children}
     </TodosContext.Provider>
   );
