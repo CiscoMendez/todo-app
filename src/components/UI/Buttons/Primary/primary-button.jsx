@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types';
 import clsx from 'clsx';
 import './primary-button.css';
-const PrimaryButton = ({ children, type, disabled }) => {
+export const PrimaryButton = ({ children, type, disabled }) => {
   const buttonClasses = clsx('btn-primary', {
     'opacity-40': disabled
   });
@@ -12,8 +12,6 @@ const PrimaryButton = ({ children, type, disabled }) => {
     </button>
   );
 };
-
-export default PrimaryButton;
 
 PrimaryButton.propTypes = {
   children: PropTypes.node.isRequired,

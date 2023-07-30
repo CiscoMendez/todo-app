@@ -1,9 +1,10 @@
 import './App.css';
 import { Tab } from '@headlessui/react';
-import PrimaryButton from './components/UI/Buttons/primary-button';
+
 import TodoList from './components/todo-list';
 import { useContext, useState } from 'react';
 import { TodosContext } from './context/todos';
+import { PrimaryButton } from './components/UI/Buttons';
 
 export default function App() {
   const [inputValue, setInputValue] = useState('');
@@ -14,6 +15,8 @@ export default function App() {
   const handleSubmit = (e) => {
     e.preventDefault();
     addTodo(inputValue);
+    //Reset form
+    setInputValue('');
   };
 
   return (
