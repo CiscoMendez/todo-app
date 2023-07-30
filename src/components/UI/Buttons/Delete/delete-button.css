@@ -1,0 +1,6 @@
+@tailwind base;
+@tailwind components;
+.btn-delete {
+  @apply flex items-center justify-center gap-1 bg-red-500 text-white text-base font-medium px-6 py-4 min-w-[6.8rem] rounded-xl drop-shadow-md hover:bg-red-400;
+}
+@tailwind utilities;
