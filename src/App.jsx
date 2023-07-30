@@ -1,35 +1,41 @@
-import './App.css';
 import { Tab } from '@headlessui/react';
-
 import TodoList from './components/todo-list';
-import { useContext, useState } from 'react';
-import { TodosContext } from './context/todos';
-import { PrimaryButton } from './components/UI/Buttons';
+import { useState } from 'react';
+import { Button } from './components/UI/Buttons';
+import { Completed } from './components/completed';
+import { useTodo } from './hooks/useTodo';
+import { v4 as uuidv4 } from 'uuid';
 
 export default function App() {
   const [inputValue, setInputValue] = useState('');
-  const { addTodo } = useContext(TodosContext);
+  const { addTodo, todos } = useTodo();
   const handleChange = (event) => {
     setInputValue(event.target.value);
   };
+
   const handleSubmit = (e) => {
     e.preventDefault();
-    addTodo(inputValue);
+    const todo = {
+      id: uuidv4(),
+      task: inputValue,
+      completed: false
+    };
+    addTodo(todo);
     //Reset form
     setInputValue('');
   };
 
   return (
-    <main className="flex flex-col items-center ">
+    <main className="flex flex-col items-center">
       <header className="p-8 w-full">
         <h1 className="text-4xl text-center font-bold ">#todo</h1>
       </header>
       <div className="flex flex-col w-full max-w-2xl ">
         <Tab.Group>
-          <Tab.List className={'border-b-[.0625rem] mb-5 flex justify-around border-gray-300'}>
-            <Tab className={'w-full py-5 '}>All</Tab>
-            <Tab className={'w-full py-5 '}>Active</Tab>
-            <Tab className={'w-full py-5 '}>Complete</Tab>
+          <Tab.List className="border-b-[.0625rem] mb-5 flex justify-around border-gray-300">
+            <Tab className="w-full py-5">All</Tab>
+            <Tab className="w-full py-5">Active</Tab>
+            <Tab className="w-full py-5">Complete</Tab>
           </Tab.List>
           <Tab.Panels>
             <Tab.Panel>
@@ -42,12 +48,16 @@ export default function App() {
                   placeholder="Add details"
                   required
                 />
-                <PrimaryButton type={'submit'}>Add</PrimaryButton>
+                <Button variant="primary" type="submit">
+                  Add
+                </Button>
               </form>
-              <TodoList />
+              <TodoList todos={todos} />
             </Tab.Panel>
             <Tab.Panel>Content 2</Tab.Panel>
-            <Tab.Panel>Content 3</Tab.Panel>
+            <Tab.Panel>
+              <Completed />
+            </Tab.Panel>
           </Tab.Panels>
         </Tab.Group>
       </div>
