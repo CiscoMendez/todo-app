@@ -1,7 +1,0 @@
-@tailwind base;
-@tailwind components;
-.btn-primary,
-.btn-primary[type='submit'] {
-  @apply flex items-center justify-center gap-1 bg-blue-500 text-white text-base font-medium px-6 py-4 min-w-[6.8rem] rounded-xl drop-shadow-md hover:bg-blue-400;
-}
-@tailwind utilities;

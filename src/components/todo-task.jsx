@@ -1,21 +1,27 @@
 import clsx from 'clsx';
 import PropTypes from 'prop-types';
-import { useEffect, useState } from 'react';
-const TodoTask = ({ value, idx }) => {
-  const [taskDone, setTaskDone] = useState(false);
-  const id = `check-${idx}`;
-  const classComplete = clsx({ 'line-through ': taskDone });
-  useEffect(() => {}, [taskDone]);
+import { useTodo } from '../hooks/useTodo';
+const TodoTask = ({ todo }) => {
+  const { updateTodo } = useTodo();
 
-  const checkTask = () => {
-    setTaskDone(!taskDone);
+  const { id, task } = todo;
+
+  const classComplete = clsx({ 'line-through ': todo.completed });
+
+  const checkTask = (ev) => {
+    const { checked } = ev.target;
+    const newTodo = {
+      ...todo,
+      completed: checked
+    };
+    updateTodo(newTodo);
   };
 
   return (
     <li>
       <label htmlFor={id} className={classComplete}>
-        <input type="checkbox" id={id} onChange={checkTask} />
-        <span className="ml-2">{value}</span>
+        <input type="checkbox" id={id} onChange={checkTask} checked={todo.completed} />
+        <span className="ml-2">{task}</span>
       </label>
     </li>
   );
@@ -24,6 +30,9 @@ const TodoTask = ({ value, idx }) => {
 export default TodoTask;
 
 TodoTask.propTypes = {
-  value: PropTypes.string.isRequired,
-  idx: PropTypes.number.isRequired
+  todo: PropTypes.shape({
+    id: PropTypes.string.isRequired,
+    task: PropTypes.string.isRequired,
+    completed: PropTypes.bool.isRequired
+  })
 };

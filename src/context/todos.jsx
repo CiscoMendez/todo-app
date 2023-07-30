@@ -7,6 +7,10 @@ export function TodosProvider({ children }) {
   const addTodo = (todo) => {
     setTodos([...todos, todo]);
   };
+  const updateTodo = (todo) => {
+    const newTodos = todos.map((item) => (item.id === todo.id ? todo : item));
+    setTodos(newTodos);
+  };
   useEffect(() => {
     const list = JSON.parse(localStorage.getItem('task')) || [];
     if (list.length > 0) {
@@ -27,7 +31,8 @@ export function TodosProvider({ children }) {
       value={{
         todos,
         addTodo,
-        deleteTodos
+        deleteTodos,
+        updateTodo
       }}
     >
       {children}
