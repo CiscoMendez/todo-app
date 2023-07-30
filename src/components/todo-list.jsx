@@ -2,13 +2,13 @@ import PropTypes from 'prop-types';
 import approval from '../assets/approval.png';
 import TodoTask from './todo-task';
 
-const TodoList = ({ todos }) => {
+const TodoList = ({ todos, done }) => {
   return (
-    <div>
-      {todos.length > 0 ? (
-        <ul className="flex flex-col gap-2 py-8">
+    <div className='w-full'>
+      {todos.some(todo=> todo)?(
+        <ul className="flex flex-col gap-3">
           {todos.map((todo) => (
-            <TodoTask key={todo.id} todo={todo} />
+            <TodoTask key={todo.id} todo={todo} done={done}/>
           ))}
         </ul>
       ) : (
@@ -30,5 +30,10 @@ TodoList.propTypes = {
       task: PropTypes.string.isRequired,
       completed: PropTypes.bool.isRequired
     })
-  )
+  ),
+  done: PropTypes.bool
 };
+
+TodoList.defaultProps = {
+  done: false
+}
