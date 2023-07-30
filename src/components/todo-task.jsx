@@ -9,7 +9,7 @@ const TodoTask = ({ todo, done }) => {
 
   const { id, task } = todo;
 
-  const classComplete = clsx("flex items-cente",{'line-through ': todo.completed });
+  const classComplete = clsx('flex items-cente', { 'line-through ': todo.completed });
 
   const checkTask = (ev) => {
     const { checked } = ev.target;

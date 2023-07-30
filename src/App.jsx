@@ -1,4 +1,4 @@
-import Dashboard from "./components/dashboard/dashboard";
+import Dashboard from './components/dashboard/dashboard';
 
 export default function App() {
   return (
@@ -7,7 +7,7 @@ export default function App() {
         <h1 className="text-4xl text-center font-bold ">#todo</h1>
       </header>
       <div className="flex flex-col w-full max-w-2xl ">
-        <Dashboard/>
+        <Dashboard />
       </div>
     </main>
   );

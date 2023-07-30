@@ -13,8 +13,12 @@ export const TodosCompleted = () => {
   };
   return (
     <div className="flex flex-col items-end gap-8 ">
-      <TodoList todos={todosCompleted} done={true}/>
-      <Button variant="delete" onClick={handleDelete} className={todosCompleted.some(todo=> todo)? "":"hidden"}>
+      <TodoList todos={todosCompleted} done={true} />
+      <Button
+        variant="delete"
+        onClick={handleDelete}
+        className={todosCompleted.some((todo) => todo) ? '' : 'hidden'}
+      >
         <MdDeleteOutline size={24} />
         Delete all
       </Button>

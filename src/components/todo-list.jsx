@@ -4,11 +4,11 @@ import TodoTask from './todo-task';
 
 const TodoList = ({ todos, done }) => {
   return (
-    <div className='w-full'>
-      {todos.some(todo=> todo)?(
+    <div className="w-full">
+      {todos.some((todo) => todo) ? (
         <ul className="flex flex-col gap-3">
           {todos.map((todo) => (
-            <TodoTask key={todo.id} todo={todo} done={done}/>
+            <TodoTask key={todo.id} todo={todo} done={done} />
           ))}
         </ul>
       ) : (
@@ -36,4 +36,4 @@ TodoList.propTypes = {
 
 TodoList.defaultProps = {
   done: false
-}
+};
