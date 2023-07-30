@@ -5,6 +5,7 @@ import { Button } from './components/UI/Buttons';
 import { Completed } from './components/completed';
 import { useTodo } from './hooks/useTodo';
 import { v4 as uuidv4 } from 'uuid';
+import { TodosActive } from './components/active';
 
 export default function App() {
   const [inputValue, setInputValue] = useState('');
@@ -54,7 +55,9 @@ export default function App() {
               </form>
               <TodoList todos={todos} />
             </Tab.Panel>
-            <Tab.Panel>Content 2</Tab.Panel>
+            <Tab.Panel>
+              <TodosActive />
+            </Tab.Panel>
             <Tab.Panel>
               <Completed />
             </Tab.Panel>
