@@ -2,7 +2,7 @@ import PropTypes from 'prop-types';
 import clsx from 'clsx';
 import './delete-button.css';
 
-const DeleteButton = ({ children, disabled }) => {
+export const DeleteButton = ({ children, disabled }) => {
   const buttonClasses = clsx('btn-delete', {
     'opacity-40': disabled
   });
@@ -13,8 +13,6 @@ const DeleteButton = ({ children, disabled }) => {
     </button>
   );
 };
-
-export default DeleteButton;
 
 DeleteButton.propTypes = {
   children: PropTypes.node.isRequired,
