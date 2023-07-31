@@ -9,7 +9,9 @@ const TodoTask = ({ todo, done }) => {
 
   const { id, task } = todo;
 
-  const classComplete = clsx('flex items-center w-full cursor-pointer', { 'line-through ': todo.completed });
+  const classComplete = clsx('flex items-center w-full cursor-pointer', {
+    'line-through ': todo.completed
+  });
 
   const checkTask = (ev) => {
     const { checked } = ev.target;
@@ -31,7 +33,7 @@ const TodoTask = ({ todo, done }) => {
       </label>
       {todo.completed && done && (
         <IconButton onClick={deleteTask}>
-          <MdDeleteOutline size={24}/>
+          <MdDeleteOutline size={24} />
         </IconButton>
       )}
     </li>

@@ -4,7 +4,7 @@ import clsx from 'clsx';
 import { EmptyList } from './empty-states/empty-list.component';
 
 const TodoList = ({ todos, done }) => {
-  const listClasses = clsx('flex flex-col', {'gap-3':!done, 'gap-0': done})
+  const listClasses = clsx('flex flex-col', { 'gap-3': !done, 'gap-0': done });
   return (
     <div className="w-full">
       {todos.some((todo) => todo) ? (
@@ -14,7 +14,7 @@ const TodoList = ({ todos, done }) => {
           ))}
         </ul>
       ) : (
-        <EmptyList done={done}/>
+        <EmptyList done={done} />
       )}
     </div>
   );
@@ -32,4 +32,3 @@ TodoList.propTypes = {
   ),
   done: PropTypes.bool
 };
-

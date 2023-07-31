@@ -1,7 +1,7 @@
-import { Fragment } from "react";
-import { TabButton } from "../Buttons";
-import { Tab } from "@headlessui/react";
-import PropTypes  from "prop-types";
+import { Fragment } from 'react';
+import { TabButton } from '../Buttons';
+import { Tab } from '@headlessui/react';
+import PropTypes from 'prop-types';
 
 export const TabC = ({ children }) => {
   return (
@@ -13,4 +13,4 @@ export const TabC = ({ children }) => {
 
 TabC.propTypes = {
   children: PropTypes.node.isRequired
-}
+};
