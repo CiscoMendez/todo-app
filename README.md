@@ -1,18 +1,18 @@
 <!-- Please update value in the {}  -->
 
-<h1 align="center">{Todo App Ciscomendez}</h1>
+<h1 align="center">Todo App Ciscomendez</h1>
 
 <div align="center">
-   Solution for a challenge from  <a href="http://devchallenges.io" target="_blank">Devchallenges.io</a>.
+   Solution for a challenge from  <a href="http://devchallenges.io](https://devchallenges.io/challenges/hH6PbOHBdPm6otzw2De5" target="_blank">Devchallenges.io</a>.
 </div>
 
 <div align="center">
   <h3>
-    <a href="https://{your-demo-link.your-domain}">
+    <a href="https://todo-cisco.netlify.app">
       Demo
     </a>
     <span> | </span>
-    <a href="https://{your-url-to-the-solution}">
+    <a href="https://github.com/CiscoMendez/todo-app/edit/develop/">
       Solution
     </a>
     <span> | </span>
@@ -28,65 +28,55 @@
 
 - [Overview](#overview)
   - [Built With](#built-with)
-- [Features](#features)
 - [How to use](#how-to-use)
-- [Contact](#contact)
-- [Acknowledgements](#acknowledgements)
 
 <!-- OVERVIEW -->
 
 ## Overview
 
-![screenshot](https://user-images.githubusercontent.com/16707738/92399059-5716eb00-f132-11ea-8b14-bcacdc8ec97b.png)
+Introducing my Todo App:
+See the demo of my Todo App where you can organize and manage your tasks efficiently. Click here to try it out!
 
-Introduce your projects by taking a screenshot or a gif. Try to tell visitors a story about your project by answering:
+My Experience Building the Todo App:
+Building the Todo App has been an exciting journey! I had the opportunity to dive deeper into React and explore various libraries and tools to enhance the user experience. Throughout the development process, I encountered challenges and triumphs that helped me grow as a developer.
 
-- Where can I see your demo?
-- What was your experience?
-- What have you learned/improved?
-- Your wisdom? :)
+Lessons Learned and Improvements Made:
+While developing the Todo App, I learned the importance of code organization and the power of React's context and hooks. I improved my skills in handling state management, conditional rendering, and responsiveness, which resulted in a more user-friendly and performant application.
 
-### Built With
+Words of Wisdom:
+Embrace the process of learning and improvement. Every challenge you encounter is an opportunity to grow and enhance your skills. Don't be afraid to explore new technologies and experiment with different approaches. Stay curious, keep coding, and never stop striving for excellence! Happy coding! :)
 
-<!-- This section should list any major frameworks that you built your project using. Here are a few examples.-->
-
-- [React](https://reactjs.org/)
-- [Vue.js](https://vuejs.org/)
-- [Tailwind](https://tailwindcss.com/)
-
-## Features
-
-<!-- List the features of your application or follow the template. Don't share the figma file here :) -->
+Built With
+React: The front-end library used to build the user interface and manage the application's state.
+Tailwind CSS: The utility-first CSS framework utilized to style the components and create a responsive design.
+Headless UI: The set of completely unstyled, fully accessible UI components for React used to enhance the user experience and interactivity of the application.
 
 This application/site was created as a submission to a [DevChallenges](https://devchallenges.io/challenges) challenge. The [challenge](https://devchallenges.io/challenges/hH6PbOHBdPm6otzw2De5) was to build an application to complete the given user stories.
 
 ## How To Use
 
-<!-- Example: -->
+To try out this application, follow the steps below:
 
-To clone and run this application, you'll need [Git](https://git-scm.com) and [Node.js](https://nodejs.org/en/download/) (which comes with [npm](http://npmjs.com)) installed on your computer. From your command line:
+1. Make sure you have [Git](https://git-scm.com) and [Node.js](https://nodejs.org/en/download/) installed on your computer. Node.js comes with npm, the package manager for Node.js.
+
+2. Clone this repository to your local machine by running the following command in your terminal or command prompt:
 
 ```bash
-# Clone this repository
-$ git clone https://github.com/your-user-name/your-project-name
-
-# Install dependencies
-$ npm install
-
-# Run the app
-$ npm start
+git clone https://github.com/your-user-name/your-project-name
 ```
 
-## Acknowledgements
+3. Navigate to the project folder and install the dependencies by running:
 
-<!-- This section should list any articles or add-ons/plugins that helps you to complete the project. This is optional but it will help you in the future. For example: -->
+```bash
+npm install
+```
 
-- [Steps to replicate a design with only HTML and CSS](https://devchallenges-blogs.web.app/how-to-replicate-design/)
-- [Node.js](https://nodejs.org/)
-- [Marked - a markdown parser](https://github.com/chjj/marked)
+4. Once the dependencies are installed, start the application with the following command:
 
-## Contact
+```bash
+npm start
+```
 
-- Website [your-website.com](https://{your-web-site-link})
-- GitHub [@your-username](https://{github.com/your-usermame})
-- Twitter [@your-twitter](https://{twitter.com/your-username})
+5. The application will launch in your default web browser, and you can now start exploring and interacting with the todo app.
+
+Enjoy managing your tasks with this todo application! If you encounter any issues or have suggestions for improvements, feel free to contribute or raise an issue on the GitHub repository. Happy tasking! 😊
