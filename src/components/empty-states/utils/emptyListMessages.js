@@ -1,6 +1,10 @@
 import confetti from '../../../assets/confetti.png';
 import approval from '../../../assets/approval.png';
 import target from '../../../assets/target.png';
+/**
+ *
+ * @param {*} completed
+ */
 export const getEmptyMessage = (completed) => {
   switch (completed) {
     case true:
