@@ -8,6 +8,6 @@ export const Input = ({ className, ...rest }) => {
 };
 
 Input.propTypes = {
-  children: PropTypes.node.isRequired,
+  children: PropTypes.node,
   className: PropTypes.string
 };

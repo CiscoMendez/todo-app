@@ -9,7 +9,7 @@ const TodoTask = ({ todo, done }) => {
 
   const { id, task } = todo;
 
-  const classComplete = clsx('flex items-cente', { 'line-through ': todo.completed });
+  const classComplete = clsx('flex items-center w-full cursor-pointer', { 'line-through ': todo.completed });
 
   const checkTask = (ev) => {
     const { checked } = ev.target;
@@ -27,11 +27,11 @@ const TodoTask = ({ todo, done }) => {
     <li className="flex items-center justify-between">
       <label htmlFor={id} className={classComplete}>
         <input type="checkbox" id={id} onChange={checkTask} checked={todo.completed} />
-        <span className="ml-2">{task}</span>
+        <span className="ml-2 w-full">{task}</span>
       </label>
       {todo.completed && done && (
         <IconButton onClick={deleteTask}>
-          <MdDeleteOutline />
+          <MdDeleteOutline size={24}/>
         </IconButton>
       )}
     </li>

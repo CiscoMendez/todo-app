@@ -1,21 +1,20 @@
 import PropTypes from 'prop-types';
-import approval from '../assets/approval.png';
 import TodoTask from './todo-task';
+import clsx from 'clsx';
+import { EmptyList } from './empty-states/empty-list.component';
 
 const TodoList = ({ todos, done }) => {
+  const listClasses = clsx('flex flex-col', {'gap-3':!done, 'gap-0': done})
   return (
     <div className="w-full">
       {todos.some((todo) => todo) ? (
-        <ul className="flex flex-col gap-3">
+        <ul className={listClasses}>
           {todos.map((todo) => (
             <TodoTask key={todo.id} todo={todo} done={done} />
           ))}
         </ul>
       ) : (
-        <div className="w-full flex flex-col items-center justify-center py-20 gap-5 text-gray-600">
-          <img src={approval} alt="Todo List" className="max-h-20 opacity-60" />
-          <span>Great job! Nothing left to do, take some time off.</span>
-        </div>
+        <EmptyList done={done}/>
       )}
     </div>
   );
@@ -34,6 +33,3 @@ TodoList.propTypes = {
   done: PropTypes.bool
 };
 
-TodoList.defaultProps = {
-  done: false
-};

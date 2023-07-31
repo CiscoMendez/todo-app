@@ -7,6 +7,7 @@ import { useTodo } from '../../hooks/useTodo';
 export const TodosCompleted = () => {
   const { todosCompleted } = useTodosStatus();
   const { deleteTodos } = useTodo();
+  const hideButton = todosCompleted.some((todo) => todo) ? '' : 'hidden';
 
   const handleDelete = () => {
     deleteTodos();
@@ -14,11 +15,7 @@ export const TodosCompleted = () => {
   return (
     <div className="flex flex-col items-end gap-8 ">
       <TodoList todos={todosCompleted} done={true} />
-      <Button
-        variant="delete"
-        onClick={handleDelete}
-        className={todosCompleted.some((todo) => todo) ? '' : 'hidden'}
-      >
+      <Button variant="delete" onClick={handleDelete} className={hideButton}>
         <MdDeleteOutline size={24} />
         Delete all
       </Button>
