@@ -34,4 +34,4 @@ TodoList.propTypes = {
 };
 TodoList.defaultProps = {
   done: false
-}
+};
