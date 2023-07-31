@@ -30,5 +30,8 @@ TodoList.propTypes = {
       completed: PropTypes.bool.isRequired
     })
   ),
-  done: PropTypes.bool
+  done: PropTypes.oneOfType([PropTypes.bool, PropTypes.string])
 };
+TodoList.defaultProps = {
+  done: false
+}

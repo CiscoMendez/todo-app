@@ -11,5 +11,5 @@ export const EmptyList = ({ done }) => {
 };
 
 EmptyList.propTypes = {
-  done: PropTypes.bool.isRequired
+  done: PropTypes.oneOfType([PropTypes.bool, PropTypes.string]).isRequired
 };

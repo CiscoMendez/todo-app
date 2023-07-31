@@ -48,5 +48,5 @@ TodoTask.propTypes = {
     task: PropTypes.string.isRequired,
     completed: PropTypes.bool.isRequired
   }),
-  done: PropTypes.bool
+  done: PropTypes.oneOfType([PropTypes.bool, PropTypes.string])
 };
