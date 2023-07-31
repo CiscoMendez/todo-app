@@ -11,6 +11,14 @@ export function TodosProvider({ children }) {
     const newTodos = todos.map((item) => (item.id === todo.id ? todo : item));
     setTodos(newTodos);
   };
+  const deleteTodo = (id) => {
+    const newTodos = todos.filter((todo) => todo.id !== id);
+    setTodos(newTodos);
+  };
+  const deleteTodos = () => {
+    const newsTodos = todos.filter((todo) => !todo.completed);
+    setTodos(newsTodos);
+  };
   useEffect(() => {
     const list = JSON.parse(localStorage.getItem('task')) || [];
     if (list.length > 0) {
@@ -20,19 +28,19 @@ export function TodosProvider({ children }) {
   useEffect(() => {
     if (todos.length > 0) {
       localStorage.setItem('task', JSON.stringify(todos));
+    } else {
+      localStorage.removeItem('task');
     }
   }, [todos]);
 
-  const deleteTodos = () => {
-    setTodos([]);
-  };
   return (
     <TodosContext.Provider
       value={{
         todos,
         addTodo,
-        deleteTodos,
-        updateTodo
+        updateTodo,
+        deleteTodo,
+        deleteTodos
       }}
     >
       {children}

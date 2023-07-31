@@ -1,0 +1,6 @@
+.input-c {
+  @apply rounded-xl border-gray-300 border-[.0625rem] text-base py-4 px-3 min-w-[30rem];
+  &:disabled {
+    @apply bg-gray-100 text-gray-400 cursor-not-allowed;
+  }
+}

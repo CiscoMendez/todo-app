@@ -1,5 +1,3 @@
-@tailwind base;
-@tailwind components;
 .btn {
   @apply flex items-center justify-center gap-1  text-white text-base font-medium px-6 py-4 min-w-[6.8rem] rounded-xl drop-shadow-md;
   &:disabled {
@@ -26,4 +24,19 @@
     @apply bg-gray-400 cursor-not-allowed;
   }
 }
-@tailwind utilities;
+.btn-icon {
+  @apply p-2 rounded-xl text-gray-300;
+  &:hover {
+    @apply bg-gray-50 text-gray-400;
+  }
+  &:disabled {
+    @apply bg-gray-400 cursor-not-allowed;
+  }
+}
+
+.bnt-tab {
+  @apply w-full py-5 border-b-[.0625rem] border-gray-300 rounded-t-xl;
+  &:hover {
+    @apply bg-gray-50;
+  }
+}
