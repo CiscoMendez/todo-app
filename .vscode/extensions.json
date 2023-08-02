@@ -4,6 +4,8 @@
     "bradlc.vscode-tailwindcss",
     "esbenp.prettier-vscode",
     "formulahendry.auto-rename-tag",
-    "ms-vsliveshare.vsliveshare"
+    "ms-vsliveshare.vsliveshare",
+    "usernamehw.errorlens",
+    "mikehanson.auto-barrel"
   ]
 }

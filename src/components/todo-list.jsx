@@ -1,25 +1,37 @@
-import React, { useContext } from 'react';
-import approval from '../assets/approval.png';
+import PropTypes from 'prop-types';
 import TodoTask from './todo-task';
-import { TodosContext } from '../context/todos';
+import clsx from 'clsx';
+import { EmptyList } from './empty-states/empty-list.component';
 
-const TodoList = React.memo(() => {
-  const { todos } = useContext(TodosContext);
-  if (todos.length < 1) {
-    return (
-      <div className="w-full flex flex-col items-center justify-center py-20 gap-5 text-gray-600">
-        <img src={approval} alt="Todo List" className="max-h-20 opacity-60" />
-        <span>Great job! Nothing left to do, take some time off.</span>
-      </div>
-    );
-  }
+const TodoList = ({ todos, done }) => {
+  const listClasses = clsx('flex flex-col', { 'gap-3': !done, 'gap-0': done });
   return (
-    <ul className="flex flex-col gap-2 py-8">
-      {todos.map((value, index) => (
-        <TodoTask key={index} idx={index} value={value} />
-      ))}
-    </ul>
+    <div className="w-full">
+      {todos.some((todo) => todo) ? (
+        <ul className={listClasses}>
+          {todos.map((todo) => (
+            <TodoTask key={todo.id} todo={todo} done={done} />
+          ))}
+        </ul>
+      ) : (
+        <EmptyList done={done} />
+      )}
+    </div>
   );
-});
+};
 TodoList.displayName = 'TodoList';
 export default TodoList;
+
+TodoList.propTypes = {
+  todos: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.string.isRequired,
+      task: PropTypes.string.isRequired,
+      completed: PropTypes.bool.isRequired
+    })
+  ),
+  done: PropTypes.oneOfType([PropTypes.bool, PropTypes.string])
+};
+TodoList.defaultProps = {
+  done: false
+};

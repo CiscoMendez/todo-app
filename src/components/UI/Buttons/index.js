@@ -1,3 +1,4 @@
-export * from './Delete/delete-button';
-export * from './Primary/primary-button';
-export * from './icon-button';
+export * from './button.component';
+export * from './icon-button.component';
+export * from './tab-button.component';
+export * from './utils/buttonVariants';
